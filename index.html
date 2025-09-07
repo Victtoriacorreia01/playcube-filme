@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Especificações de filme - Teste Front-end O POVO">
+  <title>PlayCube — Filme</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-cream">
+ <header class="topbar" role="banner" aria-label="Cabeçalho">
+  <div class="container d-flex align-items-center justify-content-between py-2">
+    <a href="#" class="d-flex align-items-center">
+      <img src="./assets/logo-clara.png" width="120" height="40" alt="Logo PlayCube" class="mr-3 mt-1">
+    </a>
+
+    <!-- Botão hambúrguer (mobile/tablet) -->
+    <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Navegação -->
+    <nav id="main-nav" aria-label="Menu principal">
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link text-white font-weight-semibold mt-2" href="#" aria-current="page">Filmes</a></li>
+        <li class="nav-item"><a class="nav-link text-white-80 font-weight-semibold mt-2" href="#">Séries</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main id="main" role="main">
+    <section class="section-hero py-5">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-12 col-md-4 text-center text-md-left mb-4 mb-md-0">
+            <img id="poster" class="poster shadow-lg" src="" alt="Pôster do filme" width="360" height="540" loading="lazy">
+          </div>
+          <div class="col-12 col-md-8">
+            <h1 id="titulo" class="display-4 mb-1">—</h1>
+            <h2 class="h5 text-navy font-weight-bold">Gênero:</h2>
+            <p id="generos" class="text-nay-95v font-weight-semibold mb-3">—</p>
+            <h2 class="h5 text-navy font-weight-bold">Sinopse:</h2>
+            <p id="sinopse" class="mb-4 text-navy-95">—</p>
+            <div class="row small-cols">
+              <div class="col-12 col-md-6 mb-3">
+                <p class="mb-1 text-navy font-weight-bold">Dirigido por:</p>
+                <p id="dirigido" class="text-navy-95 mb-3">—</p>
+                <p class="mb-1 text-navy font-weight-bold">Situação:</p>
+                <p id="situacao" class="text-nay-95v mb-3">—</p>
+                <p class="mb-1 text-navy font-weight-bold">Orçamento:</p>
+                <p id="orcamento" class="text-navy-95 mb-0">—</p>
+              </div>
+              <div class="col-12 col-md-6 mb-3">
+                <p class="mb-1 text-navy font-weight-bold">Escrito por:</p>
+                <p id="escrito" class="text-navy-95 mb-3">—</p>
+                <p class="mb-1 text-navy font-weight-bold">Idioma original:</p>
+                <p id="idioma" class="text-navy-95 mb-3">—</p>
+                <p class="mb-1 text-navy font-weight-bold">Receita:</p>
+                <p id="receita" class="text-navy-95 mb-0">—</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-cream-deeper py-5" aria-labelledby="elenco-title">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-start mb-3">
+          <h2 id="elenco-title" class="section-title mb-0">Elenco</h2>
+          <button class="btn btn-pill btn-navy-soft btn-sm ml-1" type="button" aria-label="Ver mais elenco">Ver mais</button>
+        </div>
+        <div id="elenco" class="scroll-row" role="list"></div>
+      </div>
+    </section>
+
+    <section class="section py-5" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-start mb-3">
+          <h2 id="reviews-title" class="section-title mb-0">Resenhas</h2>
+          <button class="btn btn-pill btn-navy-soft btn-sm ml-3" type="button" aria-label="Ver mais resenhas">Ver mais</button>
+        </div>
+        <div id="reviews" class="reviews-grid"></div>
+      </div>
+    </section>
+
+    <section class="section bg-cream py-5" aria-labelledby="midia-title">
+      <div class="container">
+        <h2 id="midia-title" class="section-title mb-4">Mídia</h2>
+
+        <div class="media-block">
+          <div class="media-head">
+            <h3 class="h5 text-navy m-0">Vídeos <span id="count-videos" class="text-navy-70">(0)</span></h3>
+            <button class="btn btn-pill btn-navy-soft btn-sm" type="button">Ver mais</button>
+          </div>
+          <div id="videos"></div>
+        </div>
+
+        <div class="media-block">
+          <div class="media-head">
+            <h3 class="h5 text-navy m-0">Pôsteres <span id="count-posters" class="text-navy-70">(0)</span></h3>
+            <button class="btn btn-pill btn-navy-soft btn-sm" type="button">Ver mais</button>
+          </div>
+          <div id="posters"></div>
+        </div>
+
+        <div class="media-block">
+          <div class="media-head">
+            <h3 class="h5 text-navy m-0">Imagens de fundo <span id="count-backdrops" class="text-navy-70">(0)</span></h3>
+            <button class="btn btn-pill btn-navy-soft btn-sm" type="button">Ver mais</button>
+          </div>
+          <div id="backdrops"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section recommendations py-5" aria-labelledby="recom-title">
+      <div class="container">
+        <h2 id="recom-title" class="section-title text-white mb-4">Recomendações</h2>
+        <div id="recom" class="recom-grid"></div>
+      </div>
+    </section>
+
+    <footer class="footer bg-cream" role="contentinfo">
+  <div class="container footer-wrap">
+    <img src="./assets/logo-escura.png" alt="PlayCube" class="footer-logo" width="140" height="32" />
+
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <ul class="footer-col">
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="#">Suporte</a></li>
+      </ul>
+
+      <ul class="footer-col">
+        <li><a href="#">Adicione um Filme</a></li>
+        <li><a href="#">Adicione uma Série</a></li>
+        <li><a href="#">Discussões</a></li>
+      </ul>
+
+      <ul class="footer-col">
+        <li><a href="#">Termos de Uso</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Diretrizes</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+    <div id="live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="./js/config.js"></script>
+  <script defer src="./js/app.js"></script>
+</body>
+</html>
