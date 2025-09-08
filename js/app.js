@@ -49,10 +49,12 @@ function live(msg) {
 
 async function renderDetails(movieId) {
   const d = await api(`/movie/${movieId}`);
-  byId('poster').src = img(d.poster_path, 'bigPoster');
-  byId('poster').alt = `Pôster de ${d.title}`;
+  const posterSrc = img(d.poster_path, 'bigPoster') || './assets/placeholder-poster.png';
+  const titleText = d.title || d.name || 'Filme';
+  byId('poster').src = posterSrc;
+  byId('poster').alt = `Pôster de ${titleText}`;
   const year = d.release_date ? new Date(d.release_date).getFullYear() : '';
-  byId('titulo').innerHTML = `${d.title} ${year ? `<span class="title-year">(${year})</span>` : ''}`;
+  byId('titulo').innerHTML = `${titleText} ${year ? `<span class="title-year">(${year})</span>` : ''}`;
   byId('generos').textContent = (d.genres || []).map((g) => g.name).join(', ') || '—';
   byId('sinopse').textContent = d.overview || 'Sem sinopse.';
   byId('situacao').textContent = d.status || '—';
@@ -78,10 +80,11 @@ async function renderCast(movieId) {
   const c = byId('elenco');
   c.innerHTML = '';
   list.forEach((p) => {
+    const photo = img(p.profile_path, 'profile') || './assets/placeholder-profile.jpg';
     const item = document.createElement('div');
     item.className = 'cast-card';
     item.innerHTML = `
-      <img class="cast-photo" src="${img(p.profile_path, 'profile')}" alt="Foto de ${p.name || 'Ator'}" loading="lazy">
+      <img class="cast-photo" src="${photo}" alt="Foto de ${p.name || 'Ator'}" loading="lazy">
       <div class="mt-2">
         <div class="font-weight-bold">${p.name || ''}</div>
         <div class="text-muted small">${p.character || ''}</div>
@@ -105,7 +108,7 @@ async function renderReviews(movieId) {
       <p class="review-text">${preview.replace(/\n/g, '<br>')}</p>
       <div class="review-footer d-flex align-items-end justify-content-between">
         <div>
-          <div class="by">por <a class="by-link" href="#" tabindex="-1">${r.author || 'Usuário'}</a></div>
+          <div class="by">por <a class="by-link" href="#" rel="noopener noreferrer" tabindex="-1">${r.author || 'Usuário'}</a></div>
           <div class="date">${dateBR(r.created_at)}</div>
         </div>
         <div class="score">Nota: <strong>${rating}</strong>/10</div>
@@ -147,10 +150,7 @@ async function renderMedia(movieId) {
 
     card.addEventListener('click', play);
     card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        play();
-      }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
     });
 
     vwrap.appendChild(card);
@@ -187,11 +187,12 @@ async function renderRecommendations(movieId) {
   const c = byId('recom');
   c.innerHTML = '';
   list.forEach((m) => {
+    const poster = img(m.poster_path, 'poster') || './assets/placeholder-poster.png';
     const card = document.createElement('div');
     card.className = 'recom-card';
     const pct = m.vote_average ? Math.round(m.vote_average * 10) + '%' : '';
     card.innerHTML = `
-      <img src="${img(m.poster_path, 'poster')}" loading="lazy" alt="Pôster de ${m.title}">
+      <img src="${poster}" loading="lazy" alt="Pôster de ${m.title}">
       <div class="t">${m.title}</div>
       <div class="p">${pct}</div>`;
     c.appendChild(card);
@@ -219,4 +220,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     alert('Erro: ' + e.message);
   }
 });
-
