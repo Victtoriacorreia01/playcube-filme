@@ -1,52 +1,38 @@
-# Teste Prático Front-end O POVO
-Este repositório foi criado com intuito de disponibilizar os pré-requisitos e o teste prático para se tornar um Desenvolvedor Jr. Front-end do Grupo de Comunicação O POVO   
+# PlayCube — Teste Prático Front-end O Povo  
 
-## Introdução
+Este repositório contém o desenvolvimento do projeto **PlayCube**, realizado como parte do **processo seletivo para Desenvolvedor(a) Front-end Jr. no Grupo de Comunicação O POVO**.  
 
-Esta etapa do preocesso seletivo desejamos que você desenvolva um projeto prático. Obviamente prezamos por uma página 100% RESPONSIVA em todos os dispositivos. Boas práticas de performance e acessibilidade são essenciais.
+O objetivo foi construir uma página responsiva de especificações de um filme, consumindo dados da API [TMDB](https://www.themoviedb.org), com foco em **HTML5, CSS3, JavaScript, Bootstrap 4, boas práticas de acessibilidade (WAI-ARIA), responsividade e organização de código**.  
 
-## Requisitos
+---
 
-- HTML 5
-- CSS 3
-- Fontes Web 
-- JavaScript 
-- Bootstrap 4
-- Wai Aria
-- Fetch/Axios
-- API
-- GitHub
+## 🚀 Tecnologias Utilizadas
+- **HTML5 semântico**  
+- **CSS3 (Flexbox, Grid, Media Queries, variáveis CSS)**  
+- **Bootstrap 4** para grid e utilitários  
+- **JavaScript Vanilla (ES6+)** para consumo da API  
+- **Fetch API** para requisições  
+- **WAI-ARIA** aplicado em botões, navegação e roles  
+- **Git + GitHub** para versionamento e publicação  
 
-## Atividades
+---
 
-- Criar uma página de especificações de um filme com todas as sessões solicitadas no layout, onde você precisará consumir uma API, sabendo que você precisará fazer o consumo em rotas diferentes.
+## 📱 Responsividade
+O layout foi implementado seguindo o design fornecido no Figma/Adobe XD, garantindo suporte para:  
+- **Mobile (≤576px)**  
+- **Tablet (720px – 768px)**  
+- **Desktop (≥992px)**  
 
-## Materiais
+## 💡 Minha Experiência no Projeto
+Este desafio foi uma oportunidade de colocar em prática conceitos antigos em meu conhecimento e ao mesmo tempo, me desafiar em pontos específicos:  
 
-Layout do site (Versões Desk, Tablet e Mobile)<br />
-Layout do Teste: https://xd.adobe.com/view/b7f19c62-e1fe-49eb-87ea-0b30418d3199-e2a2/grid
+- Reforcei minha compreensão sobre **consumo de APIs REST** usando Fetch.  
+- Pratiquei **HTML semântico e acessibilidade**, utilizando atributos ARIA para melhorar a experiência do usuário.  
+- Trabalhei bastante em **responsividade**, principalmente na adaptação exata para tablets.  
+- Foi também um exercício importante de **controle de versão no GitHub**, onde pude organizar commits e estruturar o projeto de forma clara.  
 
-Site da API: https://www.themoviedb.org <br />
-Documentação: https://developer.themoviedb.org/docs
+Obrigada pela oportunidade!
 
-## Critérios de Avaliação 
+---
 
-Caso o projeto entregue seja enviado com todos os critérios acima, 
-serão levados em consideração também os seguintes conhecimentos:
-
-- Sintaxe e semântica do HTML
-- Baixo tempo de renderização
-- Noções de SEO
-- Javascript/jQuery
-- Consumo de API
-- Responsividade
-- Organização do projeto
-- Uso de controle de versão
-
-## Processo de Submissão
-
-O teste deve ser versionado e disponibilizado no GitHub do candidado.<br />
-Enviar o link para: brendacamara@opovodigital.com<br />
-
-Boa sorte a todos e<br />
-Bom trabalho!!
+## 📂 Estrutura do Projeto
